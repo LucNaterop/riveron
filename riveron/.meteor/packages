@@ -12,9 +12,11 @@ jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
 es5-shim                # ECMAScript 5 compatibility for older browsers.
+modules
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
+http
 
 angular
 driftyco:ionic
