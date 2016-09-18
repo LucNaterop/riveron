@@ -1,9 +1,9 @@
-## RiverOn
+# RiverOn
 
 A minimalistic notifier app for river surfers. 
 
 
-# Routes
+## Routes
 /myspots: 	Entry point of app. Shows list of my spots, and plus button. 
 
 /spot: 		Shows details of one spot, abfluss, temperature, location, notification settings.
