@@ -9,3 +9,5 @@ Spots = new Mongo.Collection('spots',
 		}
 	}
 );
+
+Users = Meteor.users
