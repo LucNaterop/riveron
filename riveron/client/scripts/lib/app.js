@@ -10,3 +10,7 @@ else {
 function onReady() {
   angular.bootstrap(document, ['RiverOn']);
 }
+
+if(Meteor.isCordova){
+	StatusBar.overlaysWebView(true); // let status bar overlay webview
+}

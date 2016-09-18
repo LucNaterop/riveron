@@ -10,6 +10,7 @@ App.info({
 // App.setPreference('StatusBarOverlaysWebView', 'false');
 // App.setPreference('Orientation', 'all', 'ios');
 
+/*
 
 App.icons({
   "iphone_2x": "resources/icons/iphone_2x.png", // 120x120
@@ -48,6 +49,6 @@ App.launchScreens({
   "android_xxhdpi_portrait": "resources/splashes/android_xxhdpi_portrait.png", // 1080x1440
   "android_xxhdpi_landscape": "resources/splashes/android_xxhdpi_landscape.png" // 1440x1080
 });
-
+*/
 
 App.accessRule('*');

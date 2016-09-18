@@ -1,17 +1,21 @@
 
 angular.module('RiverOn').config(function($stateProvider, $urlRouterProvider){
 	
-	// // Otherwise route
-	// $urlRouterProvider.otherwise('/');
-	console.log('router stuff');
+	// Otherwise route
+	$urlRouterProvider.otherwise('/');
+
 	// concrete
-	$stateProvider.state('index', {
-		url: '/myspots',
+	$stateProvider.state('myspots', {
+		url: '',
 		templateUrl: 'client/templates/myspots.html',
-		controller: 'MySpotsController as mySpots'
+		controller: 'MySpotsController as myspots'
+	}).state('spot', {
+		url: '/spot/:spotId',
+		templateUrl: 'client/templates/spot.html',
+		controller: 'SpotController as spot'
 	}).state('about', {
 		url: '/about',
-		tempalteUrl: 'client/templates/about.html'
+		templateUrl: 'client/templates/about.html',
+		controller: 'AboutController as about'
 	});
 });
-

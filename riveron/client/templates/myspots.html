@@ -1,9 +1,23 @@
 
-
 <ion-view view-title="RIVER ON">
-	<ion-content class="padding">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus cupiditate non dolorem sint, in, blanditiis! Harum doloribus accusantium itaque sit eligendi dolorum illo fugiat obcaecati et quasi? Voluptatum, doloribus, accusamus.</p>
+	<ion-nav-buttons side="right">
+		<a href="#/about" class="button button-clear button-icon ion-ios-information-outline"></a>
+	</ion-nav-buttons>
+
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="spot in myspots.spots" href="#/spot/{{spot._id}}" class="item-icon-right">
+				<i ng-if="spot.on" class="icon ion-record onpoint"></i>
+				<i ng-if="!spot.on" class="icon ion-record offpoint"></i>
+				<h2>{{spot.name | capitalize}}</h2>
+			</ion-item>
+		</ion-list>
 	</ion-content>
+	<ion-footer-bar style="height: 80px">
+		<div class="title" style="height: 80px">
+			<a ng-click="myspots.add()" href="#/myspots"><i class="largeicon icon ion-ios-plus-empty"></i></a>
+		</div>
+	</ion-footer-bar>
 </ion-view>
 
 
