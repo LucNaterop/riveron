@@ -7,7 +7,7 @@
 			<p>{{spot.spot.lastValue}} m<sup>3</sup>/s</p>
 			<p>{{spot.spot.temperature}} °C</p>
 		</div>
-		<ion-toggle ng-model="spot.push" toggle-class="toggle-positive">Push Notifications</ion-toggle>
+		<ion-toggle ng-model="spot.pushEnabled" ng-change="spot.toggleChanged()" toggle-class="toggle-positive">Push Notifications</ion-toggle>
 	</ion-content>
 
 	<ion-footer-bar style="height: 80px">

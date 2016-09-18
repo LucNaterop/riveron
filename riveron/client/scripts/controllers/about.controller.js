@@ -1,3 +1,4 @@
+
 angular.module('RiverOn').controller('AboutController', function($scope, $reactive, $window){
 	$reactive(this).attach($scope);
 	var self = this;
@@ -6,4 +7,4 @@ angular.module('RiverOn').controller('AboutController', function($scope, $reacti
 		$window.history.back();
 	}
 
-})
+});
