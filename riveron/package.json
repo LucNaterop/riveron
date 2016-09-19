@@ -1,0 +1,16 @@
+{
+  "name": "riveron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mobile-config.js",
+  "dependencies": {
+    "xml2js": "^0.4.17",
+    "cordova-plugin-geolocation": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

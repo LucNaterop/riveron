@@ -5,17 +5,20 @@
 	</ion-nav-buttons>
 
 	<ion-content>
-		<ion-list>
+		<ion-list show-delete="shouldShowDelete">
 			<ion-item ng-repeat="spot in myspots.spots" href="#/spot/{{spot._id}}" class="item-icon-right">
 				<i ng-if="spot.on" class="icon ion-record onpoint"></i>
 				<i ng-if="!spot.on" class="icon ion-record offpoint"></i>
 				<h2>{{spot.name | capitalize}}</h2>
+				
+			    <ion-option-button class="button-assertive" ng-click="myspots.delete(spot.name)">Delete</ion-option-button>
+				
 			</ion-item>
 		</ion-list>
 	</ion-content>
 	<ion-footer-bar style="height: 80px">
 		<div class="title" style="height: 80px">
-			<a ng-click="myspots.add()" href="#/myspots"><i class="largeicon icon ion-ios-plus-empty"></i></a>
+			<a ng-click="myspots.add()" href="#/addspots"><i class="largeicon icon ion-ios-plus-empty"></i></a>
 		</div>
 	</ion-footer-bar>
 </ion-view>

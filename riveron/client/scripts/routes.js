@@ -2,7 +2,7 @@
 angular.module('RiverOn').config(function($stateProvider, $urlRouterProvider){
 	
 	// Otherwise route
-	$urlRouterProvider.otherwise('/');
+	$urlRouterProvider.otherwise('');
 
 	// concrete
 	$stateProvider.state('myspots', {
@@ -13,6 +13,10 @@ angular.module('RiverOn').config(function($stateProvider, $urlRouterProvider){
 		url: '/spot/:spotId',
 		templateUrl: 'client/templates/spot.html',
 		controller: 'SpotController as spot'
+	}).state('addspots', {
+		url: '/addspots',
+		templateUrl: 'client/templates/addSpots.html',
+		controller: 'AddSpotsController as addspots'
 	}).state('about', {
 		url: '/about',
 		templateUrl: 'client/templates/about.html',
