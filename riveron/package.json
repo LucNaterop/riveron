@@ -4,8 +4,9 @@
   "description": "",
   "main": "mobile-config.js",
   "dependencies": {
-    "xml2js": "^0.4.17",
-    "cordova-plugin-geolocation": "^2.3.0"
+    "bcrypt": "^0.8.7",
+    "cordova-plugin-geolocation": "^2.3.0",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {},
   "scripts": {

@@ -2,8 +2,18 @@ import { Meteor } from 'meteor/meteor';
 import xml2js from 'xml2js';
 
 Meteor.startup(() => {
-	
+	Meteor.setInterval(function(){
+		updateSpots();
+	}, 1000*3600*12)
 });
+
+Meteor.startup(function(){
+	Meteor.setInterval(function(){
+		doNotifications();
+	});
+});
+
+Push.debug = true;
 
 Meteor.methods({
 	'updateSpots': function(){
@@ -12,7 +22,25 @@ Meteor.methods({
 	'doNotifications': function(){
 		doNotifications();
 	},
+	'notify': function(){
+        Push.send({
+            from: 'push',
+            title: title,
+            text: text,
+            badge: badge,
+            sound: 'airhorn.caf',
+            payload: {
+                title: title,
+                text:text,
+                historyId: result
+            },
+            query: {
+                // this will send to all users
+            }
+        });
+	}
 });
+
 
 function doNotifications(){
 	// this function informs all users via push
