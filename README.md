@@ -10,4 +10,4 @@ A minimalistic notifier app for river surfers.
 
 /addspot: 	A list of all possible spots, user can add them.
 
-/about: 	About sitemap.
+/about: 	About sitemap. Bafu Quelle muss hier rein. Und kurze Info über uns.
