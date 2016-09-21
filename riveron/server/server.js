@@ -3,14 +3,15 @@ import xml2js from 'xml2js';
 
 Meteor.startup(() => {
 	Meteor.setInterval(function(){
+
 		updateSpots();
-	}, 1000*3600*12)
+	}, 1000*3600*2)
 });
 
 Meteor.startup(function(){
 	Meteor.setInterval(function(){
 		doNotifications();
-	});
+	}, 1000*3600*12 /60);
 });
 
 Push.debug = true;
@@ -25,24 +26,18 @@ Meteor.methods({
 	'notify': function(){
         Push.send({
             from: 'push',
-            title: title,
-            text: text,
-            badge: badge,
+            title: 'Hello World',
+            text: 'Watup',
+            badge: 1,
             sound: 'airhorn.caf',
-            payload: {
-                title: title,
-                text:text,
-                historyId: result
-            },
             query: {
-                // this will send to all users
             }
         });
 	}
 });
 
-
 function doNotifications(){
+	console.log('doing the notifications...');
 	// this function informs all users via push
 	var users = Users.find().fetch();
 	users.forEach(function(user){
@@ -54,7 +49,7 @@ function doNotifications(){
 				// then let's do a notification
 			    Push.send({
 			        from: 'River On',
-			        title: 'Hello World!',
+			        title: 'River On!',
 			        text: prop + ' is now ON with ' + value + ' m3/s',
 			        badge: 1, //optional, use it to set badge count of the receiver when the app is in background.
 			        query: {
@@ -69,13 +64,12 @@ function doNotifications(){
 			}
 		}
 	});
+	console.log('done. ');
 }
 
 function updateSpots(){
-
 	// this function updates all the spots in the database
-
-	console.log('getting hydrodata...');
+	console.log('Updating spots...');
 
 	var result = HTTP.get('http://www.hydrodata.ch/data/xml/hydroweb.xml', {timeout:5000, auth: 'naterop:bru69?forces'});
 
@@ -108,5 +102,5 @@ function updateSpots(){
 			}
 		});
 	});
-
+	console.log('done. ');
 }

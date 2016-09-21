@@ -1,0 +1,5 @@
+riveron/private/*
+riveron/.deploy/*
+riveron/mup.json
+.DS_Store
+

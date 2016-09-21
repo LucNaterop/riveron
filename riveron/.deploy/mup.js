@@ -4,7 +4,6 @@ module.exports = {
       host: '138.68.156.123',
       username: 'root',
       password: 'Riveron44'
-      // or leave blank for authenticate from ssh-agent
     }
   },
 
@@ -23,14 +22,8 @@ module.exports = {
     },
 
     dockerImage: 'abernix/meteord:base',
-    deployCheckWaitTime: 30
-  },
 
-  mongo: {
-    oplog: true,
-    port: 27017,
-    servers: {
-      one: {},
-    },
-  },
+    deployCheckWaitTime: 100
+  }
+
 };
