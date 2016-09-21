@@ -1,3 +1,4 @@
 cordova-plugin-device@1.1.1
+cordova-plugin-geolocation@2.3.0
 cordova-plugin-meteor-webapp@https://github.com/meteor/cordova-plugin-meteor-webapp.git#8bf95eed3f313299fc2de33658866278eea2cdc5
 meteor-ios10-csp-fix@0.1.0

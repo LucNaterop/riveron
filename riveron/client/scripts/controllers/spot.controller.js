@@ -27,4 +27,13 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 	var user = Users.findOne(Meteor.userId());
 	self.pushEnabled = user.profile.myspots[self.spot.name].pushEnabled;
 
+	// load google maps 
+	var myLatlng = new google.maps.LatLng(self.spot.geolocation.lat, self.spot.geolocation.long);
+	var mapOptions = {
+		center: myLatlng,
+		zoom: 16,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};
+	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
 });
