@@ -1,21 +1,48 @@
 
 <ion-view view-title="RIVER ON">
 	<ion-content>
-		<div class="padding">
-			<h3>{{spot.spot.name }}</h3>
-			<br>
-			<p>{{spot.spot.lastValue}} m<sup>3</sup>/s</p>
-			<p>{{spot.spot.temperature}} °C</p>
+
+		<div class="list card">
+
+		  <div class="item item-avatar">
+			<i ng-if="spot.spot.on" class="icon ion-record onpointavatar avataricon"></i>
+			<i ng-if="!spot.spot.on" class="icon ion-record offpointavatar avataricon"></i>
+			<b><h2 style="margin-bottom:10px">{{spot.spot.name | capitalize}}</h2></b>
+			<p style="font-size: 18px; color: #aaa">{{spot.spot.lastValue}} m<sup>3</sup>/s</p>
+			<p ng-if="spot.spot.temperature" style="font-size: 18px; color: #aaa"><i class="icon ion-thermometer"></i> &nbsp;{{spot.spot.temperature}} °C</p>
+			<p ng-if="!spot.spot.temperature" style="color: #aaa">No temperature available for this station.</p>
+		  </div>
+			<div class="item item-toggle">
+				Notifications
+				<label class="toggle">
+					<input type="checkbox" ng-model="spot.pushEnabled" ng-change="spot.toggleChanged()">
+					<div class="track">
+						<div class="handle"></div>
+					</div>
+				</label>
+			</div>
+			<div class="item">
+				<div class="row">
+					<div class="col col-75">
+						<p>Lower Limit: <b>{{spot.spot.lowerLimit}} m<sup>3</sup>/s </b></p>
+						<p>Upper Limit: <b>{{spot.spot.upperLimit}} m<sup>3</sup>/s </b></p>
+					</div>
+					<div class="col">
+						<button ng-click="spot.editLimits()" class="button button-clear icon ion-edit"></button>
+					</div>
+				</div>
+				
+			</div>
+				<div class="item" style="padding: 0px">
+				<div id="map" data-tap-disabled="true" style="width: 100%; height: 200px; "></div>
+			</div>
+			<div class="item">
+				<p>
+					<a href="#" class="subdued">1 Like</a>
+					<a href="#" class="subdued">5 Comments</a>
+				</p>
+			</div>
 		</div>
-		<ion-toggle ng-model="spot.pushEnabled" ng-change="spot.toggleChanged()" toggle-class="toggle-positive">Push Notifications</ion-toggle>
-		<div class="padding">
-			<p>blabla</p>
-			<div id="map" data-tap-disabled="true" style="width: 100%; height: 200px; "></div>
-			
-			<a href="geo:38.897096,-77.036545" class="button button-positive">Open im Maps</a>
-			<a href="http://maps.google.com/?q={{spot.spot.geolocation.lat + ', ' + spot.spot.geolocation.long}}" class="button button-positive">Open im Maps</a>
-		</div>
-		
 		<div style="height: 80px"></div>
 	</ion-content>
 	
@@ -26,4 +53,5 @@
 	</ion-footer-bar>
 	
 </ion-view>
+
 

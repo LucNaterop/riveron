@@ -15,7 +15,7 @@ function insertFixtures(){
 			'lowerLimit': 200,
 			'upperLimit': 300,
 			'temperature': null,
-			'geolocation': { 'lat': 47.355233, 'long': 8.331453},
+			'coordinates': { 'latitude': 47.355233, 'longitude': 8.331453},
 		},		
 		{
 			'station': '2018',
@@ -24,7 +24,7 @@ function insertFixtures(){
 			'lowerLimit': 200,
 			'upperLimit': 300,
 			'temperature': null,
-			'geolocation': { 'lat': 47.355233, 'long': 8.331453},
+			'coordinates': { 'latitude': 47.355233, 'longitude': 8.331453},
 		},
 		{
 			'station': '2018',
@@ -33,7 +33,7 @@ function insertFixtures(){
 			'lowerLimit': 200,
 			'upperLimit': 300,
 			'temperature': null,
-			'geolocation': { 'lat': 47.355233, 'long': 8.331453},
+			'coordinates': { 'latitude': 47.355233, 'longitude': 8.331453},
 		},
 		{
 			'station': '2019',
@@ -42,7 +42,7 @@ function insertFixtures(){
 			'lowerLimit': 60,
 			'upperLimit': 100,
 			'temperature': null,
-			'geolocation': { 'lat': 46.746488, 'long': 8.101343},
+			'coordinates': { 'latitude': 46.746488, 'longitude': 8.101343},
 		},
 		{
 			'station': '2020',
@@ -51,9 +51,10 @@ function insertFixtures(){
 			'lowerLimit': 60,
 			'upperLimit': 100,
 			'temperature': null,
-			'geolocation': { 'lat': 46.863324, 'long': 8.630779},
+			'coordinates': { 'latitude': 46.863324, 'longitude': 8.630779},
 		}
 	];
+
 
 	spots.forEach(function(spot){
 		Spots.insert(spot);

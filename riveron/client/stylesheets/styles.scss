@@ -6,15 +6,35 @@
 
 .onpoint {
 	font-size: 20px !important;
-	color: #00e600;
+	color: #6BAA73;
 }
 
 .offpoint {
 	font-size: 20px !important;
-	color: red;
+	color: #FC8181;
 }
+
+.onpointavatar {
+    color: #6BAA73;
+}
+
+.offpointavatar {
+    color: #FC8181;
+}
+
 
 .largeicon {
 	font-size: 80px !important;
 	color: #ccc;
+}
+
+.avataricon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 36px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 4px; 
 }

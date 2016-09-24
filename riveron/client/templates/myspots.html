@@ -19,6 +19,10 @@
 		<div style="height: 80px"></div>
 	</ion-content>
 
+	<div ng-if="myspots.spots.length == 0" class="bar bar-subfooter" style="bottom: 80px">
+		<h2 class="title">Add your spots here:</h2>	
+	</div>
+
 	<ion-footer-bar style="height: 80px">
 		<div class="title" style="height: 80px">
 			<a ng-click="myspots.add()" href="#/addspots"><i class="largeicon icon ion-ios-plus-empty"></i></a>

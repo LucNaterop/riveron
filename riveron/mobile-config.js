@@ -1,6 +1,6 @@
 App.info({
   id: 'com.naterop.riveron',
-  version: '0.5.0',
+  version: '0.6.0',
   name: 'RiverOn',
   description: 'A simple notifier app for river surfers',
   author: 'Luca Naterop',
@@ -26,7 +26,7 @@ App.icons({
   "android_xhdpi": "resources/icons/android_xhdpi.png", // 96x96
   "android_xxhdpi": "resources/icons/android_xxhdpi.png", // 144x144
   "android_xxxhdpi": "resources/icons/android_xxxhdpi.png" // 192x192
-});
+});console.log()
 
 App.launchScreens({
     "iphone_2x": "resources/splashes/iphone_2x.png", // 640x490
