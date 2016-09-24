@@ -39,7 +39,9 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 	// get initial switch state
 	var user = Users.findOne(Meteor.userId());
 	self.pushEnabled = user.profile.myspots[self.spot.name].pushEnabled;
+	Spots.findOne($stateParams.spotId);
 
+	self.spot = Spots.findOne($stateParams.spotId);
 	// load google maps 
 	var myLatlng = new google.maps.LatLng(self.spot.coordinates.latitude, self.spot.coordinates.longitude);
 	var mapOptions = {
@@ -48,6 +50,13 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+	var marker = new google.maps.Marker({
+		'map': map,
+		'draggable': false,
+		'animation': google.maps.Animation.DROP,
+		'position': {'lat': self.spot.coordinates.latitude, 'lng': self.spot.coordinates.longitude}
+	})
 
 	self.editLimits = function(){
 		var newLowerLimit = undefined;

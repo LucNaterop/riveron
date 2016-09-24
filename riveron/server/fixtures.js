@@ -5,7 +5,7 @@ Meteor.startup(function(){
 	}
 });
 
-function insertFixtures(){
+insertFixtures = function(){
 	
 	var spots = [
 		{
@@ -15,7 +15,7 @@ function insertFixtures(){
 			'lowerLimit': 200,
 			'upperLimit': 300,
 			'temperature': null,
-			'coordinates': { 'latitude': 47.355233, 'longitude': 8.331453},
+			'coordinates': { 'latitude': 47.3560239, 'longitude': 47.3560239},
 		},		
 		{
 			'station': '2018',
@@ -24,7 +24,7 @@ function insertFixtures(){
 			'lowerLimit': 200,
 			'upperLimit': 300,
 			'temperature': null,
-			'coordinates': { 'latitude': 47.355233, 'longitude': 8.331453},
+			'coordinates': { 'latitude': 47.3558399, 'longitude': 8.339947},
 		},
 		{
 			'station': '2018',
@@ -33,7 +33,7 @@ function insertFixtures(){
 			'lowerLimit': 200,
 			'upperLimit': 300,
 			'temperature': null,
-			'coordinates': { 'latitude': 47.355233, 'longitude': 8.331453},
+			'coordinates': { 'latitude': 47.3500019, 'longitude': 8.3414422},
 		},
 		{
 			'station': '2019',
@@ -48,10 +48,10 @@ function insertFixtures(){
 			'station': '2020',
 			'name': 'Bürglen',
 			'lastValue': 0,
-			'lowerLimit': 60,
-			'upperLimit': 100,
+			'lowerLimit': 300,
+			'upperLimit': 800,
 			'temperature': null,
-			'coordinates': { 'latitude': 46.863324, 'longitude': 8.630779},
+			'coordinates': { 'latitude': 47.5463829, 'longitude': 9.1477213},
 		}
 	];
 

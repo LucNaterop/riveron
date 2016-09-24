@@ -33,6 +33,10 @@ Meteor.methods({
             query: {
             }
         });
+	},
+	'wipeDatabase': function(){
+		Spots.remove({});
+		insertFixtures();
 	}
 });
 
