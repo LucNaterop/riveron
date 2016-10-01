@@ -1,5 +1,5 @@
 
-angular.module('RiverOn').controller('AddSpotsController', function($scope, $reactive, $window, $ionicBackdrop){
+angular.module('RiverOn').controller('AddSpotsController', function($scope, $reactive, $ionicHistory, $ionicBackdrop){
 	$reactive(this).attach($scope);
 	var self = this;
 
@@ -34,7 +34,7 @@ angular.module('RiverOn').controller('AddSpotsController', function($scope, $rea
 	});
 
 	self.back = function(){
-		$window.history.back();
+		$ionicHistory.goBack();
 	};
 
 	self.addSpot = function(spotName){
@@ -46,7 +46,7 @@ angular.module('RiverOn').controller('AddSpotsController', function($scope, $rea
 			'upperLimit': spot.upperLimit
 		};
 		Users.update(Meteor.userId(), {$set: {'profile': profile}});
-		$window.history.back();
+		$ionicHistory.goBack();
 	};
 
 	self.sortAlphabetically = function(){

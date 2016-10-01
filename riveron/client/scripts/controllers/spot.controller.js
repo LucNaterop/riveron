@@ -1,5 +1,5 @@
 
-angular.module('RiverOn').controller('SpotController', function($scope, $reactive, $stateParams, $window, $ionicPopup, $ionicBackdrop){
+angular.module('RiverOn').controller('SpotController', function($scope, $reactive, $stateParams, $ionicHistory, $ionicPopup, $ionicBackdrop){
 	$reactive(this).attach($scope);
 	var self = this;	
 	// helpers
@@ -18,7 +18,7 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 	});
 
 	self.back = function(){
-		$window.history.back();
+		$ionicHistory.goBack();
 	};
 
 	self.toggleChanged = function(){
