@@ -5,16 +5,20 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 	// helpers
 	self.helpers({
 		spot: function(){
-			var spot = Spots.findOne($stateParams.spotId);
-			spot.lowerLimit = Meteor.user().profile.myspots[spot.name].lowerLimit;
-			spot.upperLimit = Meteor.user().profile.myspots[spot.name].upperLimit;
+			var dbspot = Spots.findOne($stateParams.spotId);
+			var user = Meteor.user();
+			var spot = {};
+			spot.name = dbspot.name;
+			spot.lastValue = dbspot.lastValue;
+			spot.lowerLimit = user.profile.myspots[dbspot.name].lowerLimit;
+			spot.upperLimit = user.profile.myspots[dbspot.name].upperLimit;
 			spot.on = false;
+			console.log(spot);
 			if(spot.lowerLimit <= spot.lastValue && spot.lastValue <= spot.upperLimit){
 				spot.on = true;
 			}
-			console.log(spot);
 			return spot;
-		}	
+		}
 	});
 
 	self.back = function(){
@@ -41,9 +45,9 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 	self.pushEnabled = user.profile.myspots[self.spot.name].pushEnabled;
 	Spots.findOne($stateParams.spotId);
 
-	self.spot = Spots.findOne($stateParams.spotId);
+	var spot = Spots.findOne($stateParams.spotId);
 	// load google maps 
-	var myLatlng = new google.maps.LatLng(self.spot.coordinates.latitude, self.spot.coordinates.longitude);
+	var myLatlng = new google.maps.LatLng(spot.coordinates.latitude, spot.coordinates.longitude);
 	var mapOptions = {
 		center: myLatlng,
 		zoom: 16,
@@ -55,7 +59,7 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 		'map': map,
 		'draggable': false,
 		'animation': google.maps.Animation.DROP,
-		'position': {'lat': self.spot.coordinates.latitude, 'lng': self.spot.coordinates.longitude}
+		'position': {'lat': spot.coordinates.latitude, 'lng': spot.coordinates.longitude}
 	})
 
 	self.editLimits = function(){

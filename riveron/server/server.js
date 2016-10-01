@@ -3,7 +3,6 @@ import xml2js from 'xml2js';
 
 Meteor.startup(() => {
 	Meteor.setInterval(function(){
-
 		updateSpots();
 	}, 1000*3600*2)
 });
@@ -49,7 +48,9 @@ function doNotifications(){
 		for( var prop in myspots ) {
 			var value = Spots.findOne({'name': prop}).lastValue;
 			var spot = myspots[prop];
-			if(spot.lowerLimit <= value && value <= spot.upperLimit){
+			if(spot.pushEnabled && spot.lowerLimit <= value && value <= spot.upperLimit){
+				console.log('sending push notification to '); 
+				console.log(user);
 				// then let's do a notification
 			    Push.send({
 			        from: 'River On',
