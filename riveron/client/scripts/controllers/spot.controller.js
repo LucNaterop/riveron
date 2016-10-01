@@ -13,7 +13,6 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 			spot.lowerLimit = user.profile.myspots[dbspot.name].lowerLimit;
 			spot.upperLimit = user.profile.myspots[dbspot.name].upperLimit;
 			spot.on = false;
-			console.log(spot);
 			if(spot.lowerLimit <= spot.lastValue && spot.lastValue <= spot.upperLimit){
 				spot.on = true;
 			}

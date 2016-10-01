@@ -15,7 +15,7 @@ insertFixtures = function(){
 			'lowerLimit': 200,
 			'upperLimit': 300,
 			'temperature': null,
-			'coordinates': { 'latitude': 47.3560239, 'longitude': 47.3560239},
+			'coordinates': { 'latitude': 47.3560239, 'longitude': 8.339947},
 		},		
 		{
 			'station': '2018',
