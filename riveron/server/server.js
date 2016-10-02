@@ -1,16 +1,20 @@
 import { Meteor } from 'meteor/meteor';
 import xml2js from 'xml2js';
+import cron from 'cron';
 
 Meteor.startup(() => {
-	Meteor.setInterval(function(){
-		updateSpots();
-	}, 1000*3600*2)
+	var job = new cron.CronJob('00 00 8,16 * * *', Meteor.bindEnvironment(function(){
+		// do notifications each day at 8:00 and at 16:00
+		doNotifications();
+	}), null, true, 'Europe/Amsterdam');
 });
 
 Meteor.startup(function(){
+	// update the spots every two hours
+	// updateSpots();
 	Meteor.setInterval(function(){
-		doNotifications();
-	}, 1000*3600*12 /60);
+		updateSpots();
+	}, 1000*3600*2);
 });
 
 Push.debug = true;
