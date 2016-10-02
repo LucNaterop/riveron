@@ -13,7 +13,7 @@
 			<p ng-if="!spot.spot.temperature" style="color: #aaa">No temperature available for this station.</p>
 		  </div>
 			<div class="item item-toggle">
-				Notifications
+				Notifications 
 				<label class="toggle">
 					<input type="checkbox" ng-model="spot.pushEnabled" ng-change="spot.toggleChanged()">
 					<div class="track">
@@ -45,6 +45,10 @@
 				</div>
 			-->
 		</div>
+		<div style="text-align: center">
+			<button ng-click="spot.showPushInfo()" class="button button-clear icon-left ion-information-circled">About Notifications</button>
+		</div>
+		
 		<div style="height: 80px"></div>
 	</ion-content>
 	

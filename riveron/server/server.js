@@ -137,5 +137,5 @@ those notifications are handled by the operating system. So no! In that case, we
 Which is cool. So we only need to send notifications at two possible events:
 Event A: lastValue is within range and it is early in the morning
 Event B: lastValue just entered the range because of a change in abfluss. 
-
 */
+

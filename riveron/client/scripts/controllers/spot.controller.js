@@ -1,5 +1,5 @@
 
-angular.module('RiverOn').controller('SpotController', function($scope, $reactive, $stateParams, $ionicHistory, $ionicPopup, $ionicBackdrop){
+angular.module('RiverOn').controller('SpotController', function($scope, $reactive, $stateParams, $ionicHistory, $ionicPopup, $ionicBackdrop, $ionicModal){
 	$reactive(this).attach($scope);
 	var self = this;	
 	// helpers
@@ -12,6 +12,7 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 			spot.lastValue = dbspot.lastValue;
 			spot.lowerLimit = user.profile.myspots[dbspot.name].lowerLimit;
 			spot.upperLimit = user.profile.myspots[dbspot.name].upperLimit;
+			spot.temperature = dbspot.temperature;
 			spot.on = false;
 			if(spot.lowerLimit <= spot.lastValue && spot.lastValue <= spot.upperLimit){
 				spot.on = true;
@@ -111,4 +112,20 @@ angular.module('RiverOn').controller('SpotController', function($scope, $reactiv
 			});
 		});
 	};
+
+	$scope.closeModal = function(){
+		$scope.modal.hide();
+	}
+
+	$ionicModal.fromTemplateUrl('client/templates/modals/pushinfo.html', {
+		scope: $scope,
+		animation: 'slide-in-up'
+	}).then(function(modal) {
+		$scope.modal = modal;
+	});
+
+	self.showPushInfo = function(){
+		$scope.modal.show();
+	}
 });
+
