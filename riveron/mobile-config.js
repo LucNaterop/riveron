@@ -1,7 +1,7 @@
 App.info({
   id: 'com.naterop.riveron',
   version: '0.8.0',
-  name: 'RiverOn',
+  name: 'River On',
   description: 'A simple notifier app for river surfers',
   author: 'Luca Naterop',
   email: 'luca@naterop.net',
