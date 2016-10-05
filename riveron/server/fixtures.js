@@ -39,16 +39,6 @@ insertFixtures = function(){
 			'coordinates': { 'latitude': 47.3500019, 'longitude': 8.3414422},
 		},
 		{
-			'station': '2019',
-			'name': 'Brienzwiler',
-			'lastValue': 0,
-			'beforeLastValue': 0,
-			'lowerLimit': 60,
-			'upperLimit': 100,
-			'temperature': null,
-			'coordinates': { 'latitude': 46.746488, 'longitude': 8.101343},
-		},
-		{
 			'station': '2020',
 			'name': 'Bürglen',
 			'lastValue': 0,

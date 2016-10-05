@@ -12,7 +12,7 @@
 		<br>
 		<ion-list>
 			<ion-item ng-repeat="spot in addspots.spots" ng-click="addspots.addSpot(spot.name)" class="item item-icon-left">
-				<i class="icon ion-ios-plus-outline"></i>
+				<i class="icon ion-ios-plus-empty"></i>
 				{{spot.name | capitalize}} 
 				<p ng-if="spot.distance">{{ spot.distance }} km</p>
 			</ion-item>

@@ -3,7 +3,7 @@ import xml2js from 'xml2js';
 import cron from 'cron';
 
 Meteor.startup(() => {
-	var job = new cron.CronJob('00 00 8,16 * * *', Meteor.bindEnvironment(function(){
+	var job = new cron.CronJob('00 00 8 * * *', Meteor.bindEnvironment(function(){
 		// do notifications each day at 8:00 and at 16:00
 		doNotifications();
 	}), null, true, 'Europe/Amsterdam');
