@@ -29,3 +29,4 @@ random
 raix:push
 mobile-status-bar
 mdg:reload-on-resume
+mdg:geolocation

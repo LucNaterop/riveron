@@ -2,14 +2,6 @@
 <ion-view view-title="RIVER ON">
 
 	<ion-content>
-		<div style="text-align: center">
-			<br>
-			<button ng-click="addspots.sortAlphabetically()" class="button button-dark button-outline">A-B-C</button>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button ng-click="addspots.sortByDistance()" class="button button-dark button-outline icon ion-navigate"></button>
-		</div>
-		<br>
-		<br>
 		<ion-list>
 			<ion-item ng-repeat="spot in addspots.spots" ng-click="addspots.addSpot(spot.name)" class="item item-icon-left">
 				<i class="icon ion-ios-plus-empty"></i>

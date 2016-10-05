@@ -3,14 +3,14 @@ angular.module('RiverOn').controller('AddSpotsController', function($scope, $rea
 	$reactive(this).attach($scope);
 	var self = this;
 
-	self.coordinates = null;
-
 	self.helpers({
 		'spots': function(){
 			console.log('running helper');
-			var myCoordinates = self.getReactively('coordinates');
+			var myCoordinates = Geolocation.latLng();
 			var spots = Spots.find().fetch();
-			if(self.getReactively('sortByGeo')){
+			if(myCoordinates){
+				myCoordinates.latitude = myCoordinates.lat;
+				myCoordinates.longitude = myCoordinates.lng;
 				// means that user wants to sort by geolocation, thus we sort the spots array by distance
 				console.log('Ok chef, lets sort by distance then');
 				spots.sort(function(s1, s2){
@@ -47,31 +47,6 @@ angular.module('RiverOn').controller('AddSpotsController', function($scope, $rea
 		};
 		Users.update(Meteor.userId(), {$set: {'profile': profile}});
 		$ionicHistory.goBack();
-	};
-
-	self.sortAlphabetically = function(){
-		console.log('sort by geo: ');
-		console.log(self.sortByGeo);
-		self.sortByGeo = false;
-	};
-
-	self.sortByDistance = function(){
-		$ionicBackdrop.retain()
-		if(Meteor.isCordova){
-			navigator.geolocation.getCurrentPosition(function(position){
-				console.log('updating coordinates...');
-				self.coordinates = position.coords;
-				self.sortByGeo = true;
-				console.log(self.coordinates);
-				if(!self.coordinates){
-					alert('GPS not available.');
-				}
-				$ionicBackdrop.release();
-			});	
-		} else {
-			alert('GPS not available.');
-			$ionicBackdrop.release();
-		}
 	};
 });
 
